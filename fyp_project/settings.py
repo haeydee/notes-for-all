@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-3@7v2b1nnjrw_%ib6bm#7w3l$m$qmaleb_jg2c)7#jbg!_0+xr'
+SECRET_KEY = 'djajg2c)7#jbg!_0+xr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,8 +75,8 @@ TEMPLATES = [
 ]
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '255590631535-t57immpt0rqske621t6eqn8v7ucp60rm.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '2555906315content.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'GOC7_Vm'
 #SOCIAL_AUTH_GOOGLE_OAUTH2_WHITELISTED_DOMAINS = ['uitm.edu.my','student.uitm.edu.my']
 
 
