@@ -1,0 +1,48 @@
+
+{% load static %}
+
+{% block content %}
+<h1>My Milestones</h1>
+
+<!-- Add Major Milestone -->
+<h2>Add Major Milestone</h2>
+<form method="post" action="{% url 'milestone' %}">
+    {% csrf_token %}
+    {{ major_form.as_p }}
+    <button type="submit" name="add_major">Add Major Milestone</button>
+</form>
+
+<!-- Add Submilestone -->
+<h2>Add Submilestone</h2>
+<form method="post" action="{% url 'milestone' %}">
+    {% csrf_token %}
+    {{ sub_form.as_p }}
+    <button type="submit" name="add_sub">Add Submilestone</button>
+</form>
+
+<hr>
+
+<!-- Display Milestones -->
+<h2>Existing Milestones</h2>
+<ul>
+    {% for milestone in major_milestones %}
+        <li>
+            <strong>{{ milestone.title }}</strong>
+            <a href="{% url 'delete_milestone' milestone.id %}" onclick="return confirm('Are you sure you want to delete this major milestone and its submilestones?');">🗑️</a>
+            <ul>
+                {% for sub in milestone.submilestones.all %}
+                    <li>
+                        {{ sub.title }}
+                        <a href="{% url 'delete_milestone' sub.id %}" onclick="return confirm('Are you sure you want to delete this submilestone?');">🗑️</a>
+                    </li>
+                {% empty %}
+                    <li>No submilestones yet.</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% empty %}
+        <li>No major milestones yet.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
