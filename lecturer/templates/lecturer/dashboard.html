@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "lecturer/base.html" %}
+
+{% block content %}
+
+<h1>Welcome, Lecturer</h1>
+<form action="{% url 'logout' %}" method="get">
+    <button type="submit">Logout</button>
+</form>
+
+{% endblock %}

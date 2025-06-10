@@ -1,0 +1,14 @@
+{% extends "lecturer/base.html" %}
+
+  {% block content %}
+  <!DOCTYPE html>
+    <html> 
+    <h2>Upload Student CSV</h2>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="txt_file" accept=".txt" required>
+        <button type="submit">Upload</button>
+      </form>
+    </html>
+  {% endblock %}
+
